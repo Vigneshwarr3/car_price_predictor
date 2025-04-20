@@ -1,11 +1,24 @@
 import streamlit as st
 import requests
 import pandas as pd
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env
+load_dotenv()
 
 st.title("🚘 Car Price Predictor")
 st.markdown("Enter car details and get a predicted selling price.")
 
-df = pd.read_csv('filter_data.csv')
+#df = pd.read_csv('filter_data.csv')
+
+API_KEY = os.getenv("API_KEY")
+API_KEY_NAME = os.getenv("API_KEY_NAME")
+# name: key
+headers = {API_KEY_NAME: API_KEY}
+url = "http://100.90.162.48:10000/get-filtered-data" #change this url to the docker's url
+response = requests.get(url, headers=headers)
+df = pd.DataFrame(response.json())
 
 
 # --- Make and Model Dropdown ---
@@ -57,7 +70,7 @@ if fuelType in ['Gas', 'Flexible Fuel', 'Diesel']:
 elif fuelType in ['Hybrid', 'Plug-In Hybrid']:
 
     with col1:
-        mileage = st.slider("Mileage", 0, 500000, value=30000)
+        mileage = st.slider("Miles Driven", 0, 500000, value=30000)
     with col2:
         mpgCity = st.slider("MPG City", 0, 200, value=120)
     with col3:
@@ -73,7 +86,7 @@ elif fuelType in ['Hybrid', 'Plug-In Hybrid']:
 else:
 
     with col1:
-        mileage = st.slider("Mileage", 0, 500000, value=30000)
+        mileage = st.slider("Miles Driven", 0, 500000, value=30000)
     with col1:
         evRange = st.slider("EV Range (mi)", 0, 600, value=330)
     with col2:
@@ -88,6 +101,7 @@ with col1:
 with col2:
     hasReportedAccident = st.selectbox("Has Reported Accident?", ["True", "False"])
    
+
 
 # --- Submit Button ---
 if st.button("🔍 Predict Price"):
@@ -112,7 +126,8 @@ if st.button("🔍 Predict Price"):
     }
 
     try:
-        res = requests.post("http://100.90.162.48:5000/predict", json=input_data)
+        #res = requests.post("http://100.90.162.48:5000/predict", json=input_data, headers=headers)
+        res = requests.post("http://100.90.162.48:10000/predict", json=input_data, headers=headers) # don't forget to add the port number 5000
         if res.status_code == 200:
             predicted_price = res.json().get("predicted_price", "N/A")
             st.success(f"💰 Predicted Price: ${predicted_price:,.2f}")
