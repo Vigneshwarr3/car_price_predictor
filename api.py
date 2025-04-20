@@ -7,6 +7,22 @@ import pandas as pd
 import joblib
 import os
 from dotenv import load_dotenv
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+# Configure allowed origins
+origins = ["https://findyourcarprice.streamlit.app"]
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,            # or use ["*"] to allow all origins (not recommended for prod)
+    allow_credentials=True,
+    allow_methods=["GET", "POST"],     
+    allow_headers=["*"],              # allows all request headers
+)
+
 
 # Load environment variables from .env
 load_dotenv()
