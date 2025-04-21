@@ -126,7 +126,7 @@ url = "https://server.tailca7ba6.ts.net/get-data" #change this url to the docker
 
 @st.cache_data(ttl=3600)  # cache for 1 hour
 def fetch_eda_data():
-    res = requests.get(url, headers=headers)
+    res = requests.get(url, headers=headers, verify=False)
     if res.status_code == 200:
         return pd.DataFrame(res.json())
     else:
