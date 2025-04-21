@@ -16,7 +16,7 @@ API_KEY = os.getenv("API_KEY")
 API_KEY_NAME = os.getenv("API_KEY_NAME")
 # name: key
 headers = {API_KEY_NAME: API_KEY}
-url = "http://100.90.162.48:10000/get-filtered-data" #change this url to the docker's url
+url = "https://server.tailca7ba6.ts.net/get-filtered-data" #change this url to the docker's url
 response = requests.get(url, headers=headers)
 st.write(response.status_code)
 #st.write(response.text)
@@ -131,7 +131,7 @@ if st.button("🔍 Predict Price"):
 
     try:
         #res = requests.post("http://100.90.162.48:5000/predict", json=input_data, headers=headers)
-        res = requests.post("http://100.90.162.48:10000/predict", json=input_data, headers=headers) # don't forget to add the port number 5000
+        res = requests.post("https://server.tailca7ba6.ts.net/predict", json=input_data, headers=headers) # don't forget to add the port number 5000
         if res.status_code == 200:
             predicted_price = res.json().get("predicted_price", "N/A")
             st.success(f"💰 Predicted Price: ${predicted_price:,.2f}")

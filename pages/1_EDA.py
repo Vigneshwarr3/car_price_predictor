@@ -122,7 +122,7 @@ API_KEY = os.getenv("API_KEY")
 API_KEY_NAME = os.getenv("API_KEY_NAME")
 # name: key
 headers = {API_KEY_NAME: API_KEY}
-url = "http://100.90.162.48:10000/get-data" #change this url to the docker's url
+url = "https://server.tailca7ba6.ts.net/get-data" #change this url to the docker's url
 
 @st.cache_data(ttl=3600)  # cache for 1 hour
 def fetch_eda_data():
