@@ -18,8 +18,12 @@ API_KEY_NAME = os.getenv("API_KEY_NAME")
 headers = {API_KEY_NAME: API_KEY}
 url = "http://100.90.162.48:10000/get-filtered-data" #change this url to the docker's url
 response = requests.get(url, headers=headers)
+st.write(response.status_code)
+#st.write(response.text)
+st.write(response.request.headers)
+#st.write(response.request.body)
 df = pd.DataFrame(response.json())
-
+st.write(df.head())
 
 # --- Make and Model Dropdown ---
 col1, col2, col3 = st.columns(3)

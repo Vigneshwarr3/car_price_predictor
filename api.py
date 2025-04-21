@@ -12,7 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 # Configure allowed origins
-origins = ["https://findyourcarprice.streamlit.app"]
+origins = ["https://findyourcarprice.streamlit.app", "http://localhost:8501/"]
 
 # Add CORS middleware
 app.add_middleware(
