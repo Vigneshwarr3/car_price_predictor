@@ -1,0 +1,81 @@
+bodyType – The style or configuration of the vehicle's body (e.g., SUV, Sedan).
+curbWeight – The total weight of the vehicle without occupants or cargo.
+cvnaCategories – Feature categories grouped by Carvana, such as Safety, Technology.
+doors – The number of doors in the vehicle.
+drivetrainDescription – Details about the drivetrain (e.g., AWD, FWD, RWD).
+engineDescription – Details about the engine, including type and size.
+exteriorColor – The color of the vehicle's exterior.
+exteriorColorOEM – OEM-specified name for the vehicle's exterior color.
+fairMarketValue – Estimated fair market value of the vehicle.
+frontHeadRoom – Headroom measurement for front-seat passengers (in inches).
+frontLegRoom – Legroom measurement for front-seat passengers (in inches).
+fuelCapacity – Maximum fuel tank capacity (in gallons).
+fuelDescription – Type of fuel the vehicle uses (e.g., Gasoline, Electric).
+groundClearance – Distance between the ground and the lowest point of the vehicle.
+horsePower – Maximum power output of the engine in horsepower.
+inServiceDate – Date when the vehicle was first put into service.
+inServiceMiles – Mileage at the time of first service.
+installedPackages – Additional feature packages installed on the vehicle.
+installedOptions – Individual optional features installed on the vehicle.
+interiorColor – The color of the vehicle's interior.
+interiorColorOEM – OEM-specified name for the interior color.
+inventoryType – Type of inventory (e.g., used, new).
+isAutocheckReportAccidentVehicle – Indicates if the vehicle has a reported accident history.
+kbbValue – Estimated value according to Kelley Blue Book.
+kbbVehicleId – Kelley Blue Book's unique ID for the vehicle.
+location – The physical location of the vehicle.
+make – Vehicle manufacturer (e.g., Toyota, Ford).
+manufacturerBasicWarrantyMiles – Distance limit for basic warranty coverage (in miles).
+manufacturerBasicWarrantyMonths – Time period of basic warranty coverage (in months).
+manufacturerDriveTrainWarrantyMiles – Distance limit for drivetrain warranty (in miles).
+manufacturerDriveTrainWarrantyMonths – Time period for drivetrain warranty (in months).
+marketValueLoadedDateTime – Timestamp when market value was last updated.
+mileage – Total distance the vehicle has been driven.
+model – Model name of the vehicle.
+modelId – Internal or vendor-provided unique ID for the model.
+mpgCity – Miles per gallon achieved in city driving.
+mpgCombined – Combined city and highway MPG estimate.
+mpgHighway – Miles per gallon achieved in highway driving.
+numberOfKeys – Number of keys available with the vehicle.
+overallHeight – Total height of the vehicle (in inches).
+overallLength – Total length of the vehicle (in inches).
+overallWidth – Total width of the vehicle (in inches).
+parentModel – Parent model name if the vehicle is a variant.
+previousPrice – The most recent previous price of the vehicle.
+price – Current selling price of the vehicle.
+priceUpdateDate – Date when the price was last updated.
+priorUseTypes – Previous use types (e.g., rental, personal).
+purchaseType – Type of purchase (e.g., cash, finance).
+rearHeadRoom – Headroom for rear-seat passengers (in inches).
+rearLegRoom – Legroom for rear-seat passengers (in inches).
+remainingWarrantyMiles – Remaining miles under basic warranty.
+remainingWarrantyMonths – Remaining time under basic warranty (in months).
+remainingDriveTrainWarrantyMiles – Remaining drivetrain warranty (in miles).
+remainingDriveTrainWarrantyMonths – Remaining drivetrain warranty (in months).
+saleStatus – Current sales status (e.g., available, sold).
+seating – Total number of seats in the vehicle.
+standardEquipment – List of standard features included with the vehicle.
+stockImageData – Image metadata or links used for displaying the vehicle.
+stockNumber – Internal stock identification number.
+stores – Dealership or seller store locations.
+transmission – Type of transmission (e.g., Automatic, Manual).
+trim – Trim level or configuration (e.g., Sport, Limited).
+trunkCapacity – Trunk volume or storage capacity (in cubic feet).
+vehicleId – Internal or external vehicle ID used for identification.
+vexVdpImageData – Vehicle experience detail page images and metadata.
+vin – Vehicle Identification Number - a unique 17-character code.
+wheelbase – Distance between the front and rear axles (in inches).
+year – Model year of the vehicle.
+url – Link to the vehicle's listing or details page.
+owners – Number of previous owners.
+bedLength – Length of the truck bed (in feet or inches).
+highlights – Key feature highlights of the vehicle.
+towCapacity – Maximum weight the vehicle can tow (in pounds).
+brochureUrl – URL link to the manufacturer's brochure.
+windowStickerUrl – URL to the window sticker detailing features/specs.
+evMpgeCity – City MPGe for electric vehicles.
+evMpgeHighway – Highway MPGe for electric vehicles.
+evRange – Maximum range on a full charge for electric vehicles (in miles).
+evTaxCreditAmount – Amount of EV tax credit applicable.
+remainingBatteryWarrantyMiles – Remaining miles under EV battery warranty.
+remainingBatteryWarrantyMonths – Remaining time under EV battery warranty (in months).

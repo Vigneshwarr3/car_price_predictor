@@ -137,54 +137,51 @@ df = fetch_eda_data()
 
 insight_dict = {
     "make" : """
-    - 📦 **Box Plot** shows how car prices vary by make, highlighting medians, price spread, and outliers.
-    - 💰 **Rivian, Porsche, and Maserati** have the highest median prices with wider variation.
-    - 🚗 **Chevrolet, Ford, and Nissan** are the most listed makes, dominating the dataset.
-    - 📊 **Chevrolet** leads with over **2200 listings**, showing high market availability.
-    - 🔍 Makes like **smart, FIAT, and Genesis** have low listing counts, limiting their statistical significance.
+    - **Box Plot** shows how car prices vary by make, highlighting medians, price spread, and outliers.
+    - **Rivian, Porsche, and Maserati** have the highest median prices with wider variation.
+    - **Chevrolet, Ford, and Nissan** are the most listed makes, dominating the dataset.
+    - **Chevrolet** leads with over **2200 listings**, showing high market availability.
+    - Makes like **smart, Scion, Polestar and Maserati** have low listing counts, limiting their statistical significance.
 """, 
     "bodyType" : """
-- 🚘 **Trucks and Coupes** have the highest median prices among all body types.
-- 🧳 **SUVs and Sedans** dominate the listings, making up the majority of the dataset.
-- 💸 **Hatchbacks and Wagons** have the lowest median prices, ideal for budget-conscious buyers.
-- ⚠️ **Minivans and Vans** have fewer listings, so conclusions should be made cautiously.
+- **Trucks and Coupes** have the highest median prices among all body types.
+- **SUVs and Sedans** dominate the listings, making up the majority of the dataset.
+- **Hatchbacks and Wagons** have the lowest median prices, ideal for people who looks for low budget cars.
 """,
 
     "fuelType": """
-- 🔋 **Hybrid and Diesel** vehicles show higher median prices, reflecting efficiency or niche value.
-- ⛽ **Gas-powered** vehicles overwhelmingly dominate the dataset with 16,000+ listings.
-- ⚡ **Electric and Plug-In Hybrid** options show moderate pricing but are less frequent.
-- 📉 **Flexible fuel types** are rare and typically priced lower.
+- **Hybrid and Diesel** vehicles show higher median prices.
+- **Gas-powered** vehicles are cheap comparing other fuel types, might be one of the reason why it dominates the dataset with 16,000+ listings.
+- **Electric and Plug-In Hybrid** options show moderate pricing but are less frequent.
+- **Flexible fuel types** are rare and typically priced lower.
 """,
 
     "driveTrain": """
-- ⚙️ **4WD and AWD** vehicles tend to have higher median prices than FWD and RWD.
-- 🔧 **FWD** (Front-Wheel Drive) is the most common drivetrain by count.
-- 🧊 **2WD** listings are rare and should be interpreted with care due to limited data.
+- **2WD and 4WD** vehicles tend to have higher median prices than other transmissions.
+- **FWD** (Front-Wheel Drive) is the most common drivetrain by count.
 """,
 
     "transmission": """
-- 🕹️ **Manual transmissions** show slightly higher price variation.
-- ⚙️ **Automatic** vehicles dominate the dataset with over 17,000 listings.
-- 💡 Price difference between transmission types is minimal on average.
+- **Manual transmissions** show slightly higher price variation.
+- **Automatic** vehicles dominate the dataset with over 17,000 listings.
 """,
 
     "seats": """
-- 👨‍👩‍👧 Most vehicles have **5 seats**, making up the vast majority of listings.
-- 🪑 Higher seat counts (6–10) show higher price ranges, often indicating larger SUVs or vans.
-- ⚠️ Some listings with **0 or 1 seats** might be anomalies or data entry errors.
+- Most vehicles have **5 seats**, making up the vast majority of listings.
+- Higher seat counts (6–10) show higher price ranges, often indicating larger SUVs or vans.
+- Some listings with **0 or 1 seats** might be anomalies or data entry errors.
 """,
 
     "numOfOwners": """
-- 👤 Vehicles with **fewer previous owners (1–2)** tend to have higher prices.
-- 📉 Price generally decreases as the number of previous owners increases.
-- 📊 Majority of vehicles had 1 or 2 owners; 3+ is relatively rare.
+- Vehicles with **fewer previous owners (1–2)** tend to have higher prices.
+- Price generally decreases as the number of previous owners increases.
+- Majority of vehicles had 1 or 2 owners; 3+ is relatively rare.
 """,
 
     "age": """
-- ⏳ **Newer vehicles (1–3 years)** have higher prices, as expected.
-- 📉 There is a steady decline in price as vehicle age increases.
-- 🔢 Listing count drops off sharply after 10 years of age.
+- **Newer vehicles (1–3 years)** have higher prices, as expected.
+- There is a steady decline in price as vehicle age increases.
+- Listing count drops off sharply after 10 years of age.
 """
 }
 
@@ -210,6 +207,8 @@ cols = ["Vehicle Age (years)", "Miles Driven", "Horsepower", "Number of Previous
 st.divider()
 
 st.subheader("📈 Scatter Plot")
+
+st.write("Below find the scatter plot for numerical predictors vs price of the car. Here you can see the how the price is correlated to each predictors.")
 
 # User selects x, y, and optional size/color
 x_col = display_to_column[st.selectbox("X-axis:", cols, index=0)]

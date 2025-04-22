@@ -4,8 +4,10 @@ from PIL import Image
 st.title("🚗 Used Car Price Prediction")
 
 # Optional: Add a logo or illustration
-image = Image.open("./Images/car.jpg")
-st.image(image)
+image = Image.open("./Images/car_image.png")
+col1, col2, col3 = st.columns([1, 2, 1])
+with col2:
+    st.image(image)
 
 st.markdown("""
 Welcome to the **Used Car Price Analysis & Prediction App** — an interactive platform designed to help you explore car listings, compare predictive models, and estimate the price of a car based on its features.
@@ -23,12 +25,15 @@ Welcome to the **Used Car Price Analysis & Prediction App** — an interactive p
 
 ---
 ### 👨‍💻 Technologies Used:
-- Python, Streamlit
-- Docker, FastAPI
-- Selenium WebDriver, BeautifulSoup
-- Pandas, Seaborn, Scikit-Learn
-- Gradient Boosting, KNN, SVR, Linear Regression, and more
+            
+- Python  
+- Selenium WebDriver + BeautifulSoup  
+- Pandas, Matplotlib & Seaborn  
+- Scikit-learn  
+- FastAPI  
+- Docker  
+- Streamlit  
 ---
 
-Enjoy exploring, analyzing, and predicting 🚀
+Enjoy exploring, analyzing, and predicting
 """)
